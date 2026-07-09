@@ -1,0 +1,185 @@
+
+!
+! Last configuration change at 12:07:56 UTC Thu Jul 2 2026 by stefanadmin
+!
+version 15.4
+no service timestamps debug uptime
+no service timestamps log uptime
+no service password-encryption
+!
+hostname rout119
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$mERr$tSfe5..ZlBxFMdhe42VZ41
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip dhcp excluded-address 192.168.219.1
+ip dhcp excluded-address 192.168.119.1
+ip dhcp excluded-address 192.168.119.10 192.168.119.30
+ip dhcp excluded-address 192.168.219.10 192.168.219.30
+!
+ip dhcp pool POOL#VLAN11
+ network 192.168.119.0 255.255.255.224
+ default-router 192.168.119.30 
+ dns-server 192.168.119.21 172.20.28.241 8.8.8.8 8.8.4.4 
+ domain-name INFRA15
+!
+ip dhcp pool POOL#VLAN21
+ network 192.168.219.0 255.255.255.224
+ default-router 192.168.219.30 
+ dns-server 192.168.119.21 
+ domain-name INFRA15
+!
+!
+!
+no ip domain lookup
+ip domain name INFRA15
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+cts logging verbose
+!
+!
+license udi pid CISCO1941/K9 sn FCZ1923926D
+!
+!
+username stefan privilege 15 secret 5 $1$mERr$tSfe5..ZlBxFMdhe42VZ41
+username stefanadmin privilege 15 secret 5 $1$cVab$d3NC4JCbtaNupvsrU6vYE/
+!
+redundancy
+!
+!
+!
+!
+!
+ip ssh version 2
+ip ssh pubkey-chain
+  username stefanadmin
+   key-hash ssh-rsa C0C184CF2E2118168E73921DBBAAE764 stefanadmin@PC-Stefan
+   key-hash ssh-rsa FAEC8A5DA5FAA9BEAFAD90FA8FA00AE5 stefanadmin@srvlx01
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ ip address 172.20.12.119 255.255.255.0
+ ip nat outside
+ ip virtual-reassembly in
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 77.0.0.2 255.255.255.252
+ ip nat inside
+ ip virtual-reassembly in
+ duplex auto
+ speed auto
+!
+interface Serial0/0/0
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+interface Serial0/0/1
+ no ip address
+ shutdown
+ clock rate 2000000
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+ip flow-export version 9
+!
+ip nat inside source list 1 interface GigabitEthernet0/0 overload
+ip nat inside source static udp 192.168.119.147 443 172.20.12.119 443 extendable
+ip nat inside source static udp 192.168.119.147 1194 172.20.12.119 1194 extendable
+ip nat inside source static tcp 192.168.119.1 22 172.20.12.119 2201 extendable
+ip nat inside source static tcp 192.168.219.1 22 172.20.12.119 2202 extendable
+ip nat inside source static tcp 88.0.0.1 22 172.20.12.119 2211 extendable
+ip nat inside source static tcp 192.168.119.27 22 172.20.12.119 2227 extendable
+ip nat inside source static tcp 192.168.119.30 22 172.20.12.119 2230 extendable
+ip nat inside source static tcp 192.168.219.30 22 172.20.12.119 2231 extendable
+ip nat inside source static tcp 192.168.119.60 22 172.20.12.119 2250 extendable
+ip nat inside source static tcp 192.168.119.147 22 172.20.12.119 2251 extendable
+ip nat inside source static tcp 192.168.219.151 22 172.20.12.119 2252 extendable
+ip nat inside source static tcp 192.168.119.59 22 172.20.12.119 2259 extendable
+ip nat inside source static tcp 192.168.119.60 22 172.20.12.119 2260 extendable
+ip nat inside source static tcp 192.168.119.61 22 172.20.12.119 2261 extendable
+ip nat inside source static tcp 192.168.219.61 22 172.20.12.119 2262 extendable
+ip nat inside source static tcp 192.168.119.51 3001 172.20.12.119 3001 extendable
+ip nat inside source static tcp 192.168.119.61 3128 172.20.12.119 3128 extendable
+ip nat inside source static tcp 192.168.119.21 3389 172.20.12.119 3321 extendable
+ip nat inside source static tcp 192.168.119.92 5000 172.20.12.119 5000 extendable
+ip nat inside source static tcp 192.168.119.60 5900 172.20.12.119 5960 extendable
+ip nat inside source static tcp 192.168.119.93 8007 172.20.12.119 8007 extendable
+ip nat inside source static tcp 192.168.119.61 8006 172.20.12.119 8061 extendable
+ip nat inside source static tcp 192.168.219.61 8006 172.20.12.119 8062 extendable
+ip nat inside source static tcp 192.168.119.151 8085 172.20.12.119 8085 extendable
+ip nat inside source static tcp 192.168.119.147 8888 172.20.12.119 8888 extendable
+ip nat inside source static tcp 192.168.119.152 80 172.20.12.119 9999 extendable
+ip nat inside source static tcp 192.168.119.27 443 172.20.12.119 44327 extendable
+ip nat inside source static udp 192.168.119.147 51820 172.20.12.119 51820 extendable
+ip route 0.0.0.0 0.0.0.0 172.20.12.254
+ip route 88.0.0.0 255.255.255.252 192.168.119.30
+ip route 192.168.0.0 255.255.0.0 77.0.0.1
+ip route 192.168.119.151 255.255.255.255 192.168.119.147
+!
+!
+!
+access-list 1 permit any
+!
+control-plane
+!
+!
+!
+line con 0
+ logging synchronous
+ login local
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ exec-timeout 0 0
+ logging synchronous
+ login local
+ transport input ssh
+line vty 5 15
+ exec-timeout 0 0
+ logging synchronous
+ login local
+ transport input ssh
+!
+scheduler allocate 20000 1000
+!
+end

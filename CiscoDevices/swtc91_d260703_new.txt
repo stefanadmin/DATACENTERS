@@ -1,0 +1,208 @@
+
+!
+version 12.2
+no service pad
+no service timestamps debug uptime
+no service timestamps log uptime
+no service password-encryption
+!
+hostname swtc219
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$mERr$tSfe5..ZlBxFMdhe42VZ41
+!
+username stefanadmin secret 5 $1$mERr$tSfe5..ZlBxFMdhe42VZ41
+!
+!
+no aaa new-model
+system mtu routing 1500
+ip routing
+!
+!
+no ip domain-lookup
+ip domain-name INFRA15
+!
+!
+crypto pki trustpoint TP-self-signed-1552724352
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-1552724352
+ revocation-check none
+ rsakeypair TP-self-signed-1552724352
+!
+!
+crypto pki certificate chain TP-self-signed-1552724352
+ certificate self-signed 01 nvram:IOS-Self-Sig#3234.cer
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+ip ssh version 2
+!
+!
+interface FastEthernet0/1
+ switchport access vlan 21
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/2
+ switchport access vlan 21
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/3
+ switchport access vlan 21
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/4
+ switchport access vlan 21
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/5
+ switchport access vlan 22
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/6
+ switchport access vlan 22
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/7
+ switchport access vlan 22
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/8
+ switchport access vlan 22
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/9
+ switchport access vlan 23
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/10
+ switchport access vlan 23
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/11
+ switchport access vlan 23
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/12
+ switchport access vlan 23
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/13
+ switchport access vlan 24
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/14
+ switchport access vlan 24
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/15
+ switchport access vlan 24
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/16
+ switchport access vlan 24
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/17
+ switchport access vlan 25
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/18
+ switchport access vlan 25
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/19
+ switchport access vlan 25
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/20
+ switchport access vlan 25
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/21
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/22
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/23
+ switchport mode access
+ spanning-tree portfast
+!
+interface FastEthernet0/24
+ switchport access vlan 88
+ spanning-tree portfast
+!
+interface GigabitEthernet0/1
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan21
+ ip address 192.168.219.30 255.255.255.224
+!
+interface Vlan22
+ ip address 192.168.219.62 255.255.255.224
+!
+interface Vlan23
+ ip address 192.168.219.94 255.255.255.224
+!
+interface Vlan24
+ ip address 192.168.219.126 255.255.255.224
+!
+interface Vlan25
+ ip address 192.168.219.158 255.255.255.224
+!
+interface Vlan88
+ ip address 88.0.0.2 255.255.255.252
+!
+ip http server
+ip http secure-server
+ip route 0.0.0.0 0.0.0.0 88.0.0.1
+ip route 192.168.119.0 255.255.255.0 88.0.0.1
+!
+line con 0
+line vty 0 4
+ exec-timeout 0 0
+ logging synchronous
+ login local
+ transport input ssh
+line vty 5 15
+ exec-timeout 0 0
+ logging synchronous
+ login local
+ transport input ssh
+!
+end
