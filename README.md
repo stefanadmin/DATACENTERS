@@ -2,8 +2,11 @@
 
 ## Projects
 ### Datacenters Decentral
-- Proxmox
-- Links
+- Labo datacenters cursisten
+  - [Target implementatie voor de cursisten](docs/assets/Datacenters image PT.png)
+  - Instructies voor de cursisten
+  - Powerpoint presentatie voor de cursisten  
+- Proxmox servers VDAB
 
 ### Datacenters Mainframe
 - Datacenter Move IS4F  (From Windhof to Kayl)
