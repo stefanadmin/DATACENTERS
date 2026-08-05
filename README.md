@@ -4,7 +4,7 @@
 ### Datacenters Decentral
 - Labo datacenters cursisten
   - [Target implementatie voor de cursisten](docs/assets/Datacenters image PT.png)
-  - Instructies voor de cursisten
+  - Instructies voor de cursistenkilo
   - [Presentatie voor de cursisten](docs/assets/LABO DATACENTERS Instructeur 04-08-2026.pdf)
   
   
