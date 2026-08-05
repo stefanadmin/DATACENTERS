@@ -4,8 +4,8 @@
 ### Datacenters Decentral
 - Labo datacenters cursisten
   - [Target implementatie voor de cursisten](docs/assets/Datacenters image PT.png)
-  - Instructies voor de cursisten
-  - [Presentatie voor de cursisten](docs/assets/LABO DATACENTERS Instructeur 04-08-2026.pdf)
+  - [Instructies voor de cursist](docs/assets/LABO DATACENTERS instructies cursist.pdf)
+  - [Presentatie voor de cursist](docs/assets/docs/assets/LABO DATACENTERS instructies cursist.pdf)
   
   
 - Proxmox servers VDAB
