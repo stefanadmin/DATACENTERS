@@ -1,8 +1,8 @@
 # DATACENTERS
 
-## Projects
-### Datacenters Decentral
-- Labo datacenters cursisten
+## Projecten
+### Datacenters Decentrale Systemen
+- Labo datacenters cursisten (eindwerk cursisten VDAB Systeembeheer)
   - [Target implementatie voor de cursisten](docs/assets/Datacenters image PT.png)
   - [Instructies voor de cursist](docs/assets/LABO DATACENTERS instructies cursist.pdf)
   - [Presentatie van de instructeur](docs/assets/LABO DATACENTERS presentatie instructeur.pdf)
@@ -14,7 +14,7 @@
 - Datacenter Move IS4F  (From Windhof to Kayl)
 
 
-# Education
+# Opleiding
 - 2012: Getuigschrift Bosbouwkunde (77%)
   - Agentschap voor Natuur en Bos
   
