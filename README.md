@@ -6,7 +6,7 @@
   - [Target implementatie voor de cursisten](docs/assets/Datacenters image PT.png)
   - Instructies voor de cursisten
   - [Presentatie voor de cursisten](https://github.com/stefanadmin/DATACENTERS/blob/main/docs/assets/Datacenters%20image%20PT.png)
-  - 
+  
 - Proxmox servers VDAB
 
 ### Datacenters Mainframe
