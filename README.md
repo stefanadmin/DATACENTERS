@@ -5,12 +5,12 @@
 - Labo datacenters cursisten
   - [Target implementatie voor de cursisten](docs/assets/Datacenters image PT.png)
   - Instructies voor de cursisten
-  - Powerpoint presentatie voor de cursisten  
+  - [Presentatie voor de cursisten](docs/assets/LABO DATACENTERS instructeur 04-08-2026.pdf)
 - Proxmox servers VDAB
 
 ### Datacenters Mainframe
 - Datacenter Move IS4F  (From Windhof to Kayl)
-- Links
+
 
 # Education
 - 2012: Getuigschrift Bosbouwkunde (77%)
