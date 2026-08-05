@@ -6,7 +6,7 @@
   - [Target implementatie voor de cursisten](docs/assets/Datacenters image PT.png)
   - Instructies voor de cursisten
   - [Presentatie voor de cursisten](docs/assets/LABO DATACENTERS Instructeur 04-08-2026.pdf)
-  
+  <a href="(https://github.com/stefanadmin/DATACENTERS/blob/1c0e446db63f2f5da8ea8b73ab44921a627cb76c/docs/assets/LABO%20DATACENTERS%20Instructeur%2004-08-2026.pdf)" target="_blank">PDF.</a>
   
 - Proxmox servers VDAB
 
