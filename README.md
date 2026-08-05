@@ -6,7 +6,8 @@
   - [Target implementatie voor de cursisten](docs/assets/Datacenters image PT.png)
   - [Instructies voor de cursist](docs/assets/LABO DATACENTERS instructies cursist.pdf)
   - [Presentatie van de instructeur](docs/assets/LABO DATACENTERS presentatie instructeur.pdf)
-  
+  - Labo datacenters cursisten (eindwerk cursisten VDAB Systeembeheer)
+  - <a href="docs/assets/Datacenters image PT.png" target="_blank">Target implementatie voor de cursisten</a>
   
 - Proxmox servers VDAB
 
