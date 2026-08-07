@@ -22,7 +22,7 @@
   - Rega school Leuven
   
 - 1986: Hoger secundair onderwijs, Psycho-Sociale Wetenschappen met wiskunde (Laureaat)
-  - Sint-Jorisinstituut Brussels
+  - Sint-Jorisinstituut Brussels 
 
 # Werkervaring
 - 2019 – 2026: VDAB (Heverlee)
